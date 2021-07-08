@@ -12,7 +12,6 @@ saveBtn.on("click", function () {
 
     localStorage.setItem(time, content);
 });
-
 // function to set content, based on the id, from local storage. 
 function setContent() {
     $(".time-block").each(function () {
@@ -20,10 +19,30 @@ function setContent() {
         var content = localStorage.getItem(id);
 
         if (content !== null) {
-            $(this).children(".content").val(content);
+            $(this).children(".content").val(content); 
+        
         }
+        
     });
 }
-
-
 setContent();
+//takes the current hour and compares to the time-block id, if it is the same, changes colors depending on its comparison to the hourEl
+function colorSelector() {
+    hour = moment().hours();
+    $(".time-block").each(function () {
+        var hourEl = parseInt($(this).attr("id"));
+        
+
+        if (hourEl > hour) {
+            $(this).addClass("future")
+        }
+        else if (hourEl === hour) {
+            $(this).addClass("present");
+        }
+        else {
+            $(this).addClass("past");
+        }
+    })
+}
+
+colorSelector();
