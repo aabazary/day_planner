@@ -73,3 +73,8 @@ textarea {
 .container {
   margin-bottom: 20px;
 }
+#thumbsUp{
+  text-align: center;
+  padding-bottom: 10px;
+  visibility: hidden;
+}

@@ -1,6 +1,7 @@
 //setting variables
 var time = moment().format('dddd[,] MMMM Do[,] YYYY');
 var saveBtn = $(".saveBtn");
+var thumbsUp = $("#thumbsUp")
 
 // setting up current date(preformated)
 $('#currentDay').text(time);
@@ -11,6 +12,9 @@ saveBtn.on("click", function () {
     var content = $(this).siblings(".content").val();
 
     localStorage.setItem(time, content);
+    
+    thumbsUp.attr("style", "visibility: visible")
+    
 });
 // function to set content, based on the id, from local storage. 
 function setContent() {
