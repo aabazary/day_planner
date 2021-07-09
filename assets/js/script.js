@@ -13,7 +13,7 @@ saveBtn.on("click", function () {
 
     localStorage.setItem(time, content);
     
-    thumbsUp.attr("style", "visibility: visible")
+    thumbsUp.fadeIn(200).delay(2000).fadeOut(200)
     
 });
 // function to set content, based on the id, from local storage. 
